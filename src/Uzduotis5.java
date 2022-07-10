@@ -24,4 +24,19 @@ public class Uzduotis5 {
     public static boolean arVyriskoGiminesZodis(String zodis) {
         return zodis.toLowerCase().endsWith("as") || zodis.toLowerCase().endsWith("us") || zodis.toLowerCase().endsWith("is");
     }
+
+    /**
+     * Suskaičiuoja kiek masyve yra žodžių, kurie baigiassi vyriška galūne
+     * @param zodziai žodžių masyvas
+     * @return kiekį
+     */
+    public static int kiekVyriskosGiminesZodziu(String[] zodziai) {
+        int kiekis = 0;
+        for (String s : zodziai) {
+            if (arVyriskoGiminesZodis(s)) {
+                kiekis++;
+            }
+        }
+        return kiekis;
+    }
 }
