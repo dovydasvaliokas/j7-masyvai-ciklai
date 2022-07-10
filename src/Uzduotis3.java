@@ -9,6 +9,9 @@ public class Uzduotis3 {
     public static void main(String[] args) {
         double[] skaiciai = masyvoNuskaitymas();
 
+        double suma = masyvoSumaWhile(skaiciai);
+        System.out.println("suma = " + suma);
+
 
     }
 
@@ -28,4 +31,18 @@ public class Uzduotis3 {
         return skaiciai;
     }
 
+
+    /**
+     * Suskaičiuoja massyvo sumą naudojant while ciklą
+     * @param masyvas massyvas
+     * @return double masyvo susma
+     */
+    public static double masyvoSumaWhile(double[] masyvas) {
+        int i = 0;
+        double suma = 0;
+        while (i < masyvas.length) {
+            suma += masyvas[i++];
+        }
+        return suma;
+    }
 }
