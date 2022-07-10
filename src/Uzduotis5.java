@@ -6,8 +6,22 @@
  */
 public class Uzduotis5 {
     public static void main(String[] args) {
+        System.out.println("arVyriskoGiminesZodis(\"beleKAS\") = " + arVyriskoGiminesZodis("beleKAS"));
+        System.out.println("arVyriskoGiminesZodis(\"beleKas\") = " + arVyriskoGiminesZodis("beleKas"));
+        System.out.println("arVyriskoGiminesZodis(\"beleKis\") = " + arVyriskoGiminesZodis("beleKis"));
+        System.out.println("arVyriskoGiminesZodis(\"beleKus\") = " + arVyriskoGiminesZodis("beleKus"));
+        System.out.println("arVyriskoGiminesZodis(\"beleKUS\") = " + arVyriskoGiminesZodis("beleKUS"));
+        System.out.println("arVyriskoGiminesZodis(tvora) = " + arVyriskoGiminesZodis("tvora"));
 
     }
 
-
+    /**
+     * Patikrina ar žodis yra vyriškos giminės (baigiasi galūne "is", "as" arba "us"
+     * Funkcija ignoruoja didžiųjų/mažųjų raidžių skirtumą (not case-sensitive)
+     * @param zodis tikrinamas žodis
+     * @return true jeigu vyriškoss giminės, false jeigu ne
+     */
+    public static boolean arVyriskoGiminesZodis(String zodis) {
+        return zodis.toLowerCase().endsWith("as") || zodis.toLowerCase().endsWith("us") || zodis.toLowerCase().endsWith("is");
+    }
 }
