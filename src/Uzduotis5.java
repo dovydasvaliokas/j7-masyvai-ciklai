@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Užduotis 5:
  * 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
@@ -6,13 +8,9 @@
  */
 public class Uzduotis5 {
     public static void main(String[] args) {
-        System.out.println("arVyriskoGiminesZodis(\"beleKAS\") = " + arVyriskoGiminesZodis("beleKAS"));
-        System.out.println("arVyriskoGiminesZodis(\"beleKas\") = " + arVyriskoGiminesZodis("beleKas"));
-        System.out.println("arVyriskoGiminesZodis(\"beleKis\") = " + arVyriskoGiminesZodis("beleKis"));
-        System.out.println("arVyriskoGiminesZodis(\"beleKus\") = " + arVyriskoGiminesZodis("beleKus"));
-        System.out.println("arVyriskoGiminesZodis(\"beleKUS\") = " + arVyriskoGiminesZodis("beleKUS"));
-        System.out.println("arVyriskoGiminesZodis(tvora) = " + arVyriskoGiminesZodis("tvora"));
-
+        String[] zodziai = masyvoNuskaitymas();
+        int kiekVyriskosGiminesZodziu = kiekVyriskosGiminesZodziu(zodziai);
+        System.out.println("kiekVyriskosGiminesZodziu = " + kiekVyriskosGiminesZodziu);
     }
 
     /**
@@ -23,6 +21,23 @@ public class Uzduotis5 {
      */
     public static boolean arVyriskoGiminesZodis(String zodis) {
         return zodis.toLowerCase().endsWith("as") || zodis.toLowerCase().endsWith("us") || zodis.toLowerCase().endsWith("is");
+    }
+
+    /**
+     * Nuskaito žodžių massyvą iš konsolės
+     * @return žodžių masyvą
+     */
+    public static String[] masyvoNuskaitymas() {
+        Scanner skaitytuvas = new Scanner(System.in);
+        System.out.println("Įveskite kiek massyve bus skaičių: ");
+        int n = skaitytuvas.nextInt();
+        skaitytuvas.nextLine();
+        String[] zodziai = new String[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Įveskite " + i + "-ąjį skaičių: ");
+            zodziai[i] = skaitytuvas.nextLine();
+        }
+        return zodziai;
     }
 
     /**
