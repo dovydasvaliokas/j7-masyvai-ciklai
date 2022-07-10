@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /*
 Užduotis 1:
 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
@@ -8,9 +11,8 @@ Pastaba: galima eiti nuo 0 iki x ir skaičiuoti iš kelių skaičių, x dalinasi
  */
 public class Uzduotis1 {
     public static void main(String[] args) {
-        System.out.println("arPirminis(11) = " + arPirminis(11));
-        System.out.println("arPirminis(20) = " + arPirminis(20));
-        System.out.println("arPirminis(111) = " + arPirminis(111));
+        int[] tikrinamiSkaiciai = masyvoNuskaitymas();
+        System.out.println("tikrinamiSkaiciai = " + Arrays.toString(tikrinamiSkaiciai));
     }
 
     /**
@@ -25,5 +27,22 @@ public class Uzduotis1 {
             }
         }
         return true;
+    }
+
+
+    /**
+     * Nuskaito skaičių massyvą iš konsolės
+     * @return skaičių masyvą
+     */
+    public static int[] masyvoNuskaitymas() {
+        Scanner skaitytuvas = new Scanner(System.in);
+        System.out.println("Įveskite kiek massyve bus skaičių: ");
+        int n = skaitytuvas.nextInt();
+        int[] skaiciai = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Įveskite " + i + "-ąjį skaičių: ");
+            skaiciai[i] = skaitytuvas.nextInt();
+        }
+        return skaiciai;
     }
 }
