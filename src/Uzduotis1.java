@@ -13,6 +13,8 @@ public class Uzduotis1 {
     public static void main(String[] args) {
         int[] tikrinamiSkaiciai = masyvoNuskaitymas();
         System.out.println("tikrinamiSkaiciai = " + Arrays.toString(tikrinamiSkaiciai));
+
+        System.out.println("Masyve pirminių skaičių yra: " + kiekPirminiu(tikrinamiSkaiciai));
     }
 
     /**
@@ -44,5 +46,20 @@ public class Uzduotis1 {
             skaiciai[i] = skaitytuvas.nextInt();
         }
         return skaiciai;
+    }
+
+    /**
+     * Suskaičiuoja kiek pirminių skaičių yra masyve
+     * @param masyvas tikrinamas skaičių masyvas
+     * @return sveikas skaičius - kiek pirminių sk. yra masyve
+     */
+    public static int kiekPirminiu(int[] masyvas) {
+        int kiekis = 0;
+        for (int elementas : masyvas) {
+            if (arPirminis(elementas)) {
+                kiekis++;
+            }
+        }
+        return kiekis;
     }
 }
