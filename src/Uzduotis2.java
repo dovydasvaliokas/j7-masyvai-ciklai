@@ -15,6 +15,9 @@ public class Uzduotis2 {
         System.out.println("masyvas1 = " + Arrays.toString(masyvas1));
         System.out.println("masyvas2 = " + Arrays.toString(masyvas2));
 
+        int[] jungtinis = masyvuSujungimas(masyvas1, masyvas2);
+        System.out.println("jungtinis = " + Arrays.toString(jungtinis));
+
     }
 
     /**
@@ -31,5 +34,24 @@ public class Uzduotis2 {
             skaiciai[i] = skaitytuvas.nextInt();
         }
         return skaiciai;
+    }
+
+    /**
+     * Funkcija sujungiu du masyvus į vieną
+     * @param m1 pirmas masyvass
+     * @param m2 antras masyvas
+     * @return int[] masyvą, kuriame yra abiejų masyvų elementai sujungti į vieną
+     */
+    public static int[] masyvuSujungimas(int[] m1, int[] m2) {
+        int bendrasDydis = m1.length + m2.length;
+        int[] bendrasMasyvas = new int[bendrasDydis];
+        for (int i = 0; i < m1.length; i++) {
+            bendrasMasyvas[i] = m1[i];
+        }
+
+        for (int i = 0; i < m2.length; i++) {
+            bendrasMasyvas[i + m1.length] = m2[i];
+        }
+        return bendrasMasyvas;
     }
 }
