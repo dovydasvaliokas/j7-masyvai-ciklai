@@ -8,8 +8,22 @@ Pastaba: galima eiti nuo 0 iki x ir skaičiuoti iš kelių skaičių, x dalinasi
  */
 public class Uzduotis1 {
     public static void main(String[] args) {
-
+        System.out.println("arPirminis(11) = " + arPirminis(11));
+        System.out.println("arPirminis(20) = " + arPirminis(20));
+        System.out.println("arPirminis(111) = " + arPirminis(111));
     }
 
-
+    /**
+     * Patikrina ar skaičius yra pirminiss
+     * @param skaicius tikrinamas skaičius
+     * @return true, jeigu pirminis, false jeigu ne
+     */
+    public static boolean arPirminis(int skaicius) {
+        for (int i = 2; i < skaicius / 2; i++) {
+            if (skaicius % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
