@@ -29,12 +29,12 @@ public class Uzduotis5 {
      */
     public static String[] masyvoNuskaitymas() {
         Scanner skaitytuvas = new Scanner(System.in);
-        System.out.println("Įveskite kiek massyve bus skaičių: ");
+        System.out.println("Įveskite kiek massyve bus žodžių: ");
         int n = skaitytuvas.nextInt();
         skaitytuvas.nextLine();
         String[] zodziai = new String[n];
         for (int i = 0; i < n; i++) {
-            System.out.println("Įveskite " + i + "-ąjį skaičių: ");
+            System.out.println("Įveskite " + i + "-ąjį žodį: ");
             zodziai[i] = skaitytuvas.nextLine();
         }
         return zodziai;
