@@ -13,6 +13,9 @@ public class Uzduotis4 {
         int[] skaiciai = masyvoNuskaitymas();
         System.out.println("skaiciai = " + Arrays.toString(skaiciai));
 
+        skaiciai = paverstiVisusTeigiamais(skaiciai);
+        System.out.println("skaiciai = " + Arrays.toString(skaiciai));
+
     }
 
     /**
@@ -29,5 +32,17 @@ public class Uzduotis4 {
             skaiciai[i] = skaitytuvas.nextInt();
         }
         return skaiciai;
+    }
+
+    /**
+     * Paverčia visus teigiamais skaičiais.
+     * @param masyvas verčiamas masyvas
+     * @return paverstą masyvą
+     */
+    public static int[] paverstiVisusTeigiamais(int[] masyvas) {
+        for (int i = 0; i < masyvas.length; i++) {
+            masyvas[i] = Math.abs(masyvas[i]);
+        }
+        return masyvas;
     }
 }
