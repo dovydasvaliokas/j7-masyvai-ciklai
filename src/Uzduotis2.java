@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Užduotis 2:
  * 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
@@ -6,6 +9,27 @@
  */
 public class Uzduotis2 {
     public static void main(String[] args) {
+        int[] masyvas1 = masyvoNuskaitymas();
+        int[] masyvas2 = masyvoNuskaitymas();
 
+        System.out.println("masyvas1 = " + Arrays.toString(masyvas1));
+        System.out.println("masyvas2 = " + Arrays.toString(masyvas2));
+
+    }
+
+    /**
+     * Nuskaito skaičių massyvą iš konsolės
+     * @return skaičių masyvą
+     */
+    public static int[] masyvoNuskaitymas() {
+        Scanner skaitytuvas = new Scanner(System.in);
+        System.out.println("Įveskite kiek massyve bus skaičių: ");
+        int n = skaitytuvas.nextInt();
+        int[] skaiciai = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Įveskite " + i + "-ąjį skaičių: ");
+            skaiciai[i] = skaitytuvas.nextInt();
+        }
+        return skaiciai;
     }
 }
